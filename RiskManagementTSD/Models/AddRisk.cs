@@ -9,8 +9,8 @@ namespace RiskManagementTSD.Models
     {
         public string Name{ get; set; }
         public string Description { get; set; }
-        public bool? Probability { get; set; }
-        public bool? Impact { get; set; }
+        public int? Probability { get; set; }
+        public int? Impact { get; set; }
         public int Score { get; set; }
     }
 }
