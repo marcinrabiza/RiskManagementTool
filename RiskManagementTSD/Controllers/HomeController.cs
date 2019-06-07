@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RiskManagementTSD.Models;
 
-using Microsoft.AspNetCore.Mvc;
 namespace RiskManagementTSD.Controllers
 {
     public class HomeController : Controller
