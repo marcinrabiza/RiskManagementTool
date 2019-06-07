@@ -21,4 +21,4 @@ namespace RiskManagementTSD
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
-}
+}//comment test
