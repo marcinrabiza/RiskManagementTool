@@ -1,4 +1,5 @@
-﻿@{
+﻿@model  IEnumerable<Database.Models.Databaseitem>
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
 </head>
     <body>
-        <table>
+        <table class="table table-sm table-striped table-bordered">
             <tr>
                 <th>Name</th>
                 <th>Description</th>
@@ -19,7 +20,20 @@
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-          
+            @foreach(Database.Models.Databaseitem item in Model)
+                {
+                    <form>
+                        <tr>
+                            <td><input name="name" value=@item.Name readonly></td>
+                            <td><input name="description" value=@item.Description readonly></td>
+                            <td><input name="probability" value=@item.Probability readonly></td>
+                            <td><input name="impact" value=@item.Impact readonly></td>
+                            <td><button type="submit" asp-action="EditRisk">Edit</button></td>
+                            <td><button type="submit" asp-action="DeleteRisk">Delete</button></td>
+                        </tr>
+                    </form>
+                }
+            
         </table>
         <form><button type="submit" asp-action="AddRisk">New</button></form>
     </body>
