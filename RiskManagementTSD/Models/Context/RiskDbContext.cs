@@ -10,7 +10,7 @@ namespace RiskManagementTSD.Models.Context
     {
         public RiskDbContext(DbContextOptions options) : base(options)
 
-        {
+        {   
            
         }
 
