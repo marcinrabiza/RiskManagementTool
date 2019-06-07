@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\Nowy folder1\" />
+    <Folder Include="wwwroot\lib\Nowy folder\" />
+  </ItemGroup>
+
 </Project>
