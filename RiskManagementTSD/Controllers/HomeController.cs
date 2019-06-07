@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using RiskManagementTSD.Models;
 
 using Microsoft.AspNetCore.Mvc;
-namespace PartyInvites.Controllers
+namespace RiskManagementTSD.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,6 +15,12 @@ namespace PartyInvites.Controllers
         {
             return View("Table");
         }
+        
+        public ViewResult AddRisk()
+        {
+            return View();
+        }
+   
     }
 }
 
