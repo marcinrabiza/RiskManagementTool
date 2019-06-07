@@ -9,7 +9,9 @@ namespace RiskManagementTSD.Models.Context
     public class RiskDbContext : DbContext
     {
         public RiskDbContext(DbContextOptions options) : base(options)
+
         {
+           
         }
 
         DbSet<Risk> Risk { get; set; }

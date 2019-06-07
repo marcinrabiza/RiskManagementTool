@@ -14,14 +14,22 @@ namespace RiskManagementTSD.Controllers
         {
             return View("Table");
         }
-        
+        [HttpGet]
         public ViewResult AddRisk()
         {
             return View();
         }
-   
+        [HttpPost]
+        public ViewResult AddRisk(AddRisk addRisk)
+        {
+            // TODO: store response from guest
+            /*Repository.AddResponse(guestResponse);*/
+            return View("Thanks", addRisk);
+            
+        }
     }
 }
+
 
 /*Test, please ignore*/
 /*Production brancssh*/
