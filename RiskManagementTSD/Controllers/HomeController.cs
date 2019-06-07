@@ -19,7 +19,8 @@ namespace RiskManagementTSD.Controllers
 
         public ViewResult Index()
         {
-            return View("Table");
+            var risks = _riskDbContext.AddRisk.ToList();
+            return View("Table", risks);
         }
         [HttpGet]
         public ViewResult AddRisk()
@@ -31,6 +32,7 @@ namespace RiskManagementTSD.Controllers
         {
             // TODO: store response from guest
             /*Repository.AddResponse(guestResponse);*/
+            //Saving to db.
             _riskDbContext.AddRisk.Add(addRisk);
             _riskDbContext.SaveChanges();
             return View("Thanks", addRisk);
