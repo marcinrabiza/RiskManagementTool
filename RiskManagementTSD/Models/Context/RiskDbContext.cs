@@ -14,6 +14,6 @@ namespace RiskManagementTSD.Models.Context
            
         }
 
-        DbSet<Risk> Risk { get; set; }
+        public DbSet<AddRisk> AddRisk { get; set; }
     }
 }
