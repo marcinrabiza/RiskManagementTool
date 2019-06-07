@@ -6,43 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RiskManagementTSD.Models;
 
-namespace RiskManagementTSD.Controllers
+namespace PartyInvites.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View("Table");
         }
     }
 }
-
-/*Test, please ignore*/
-/*COMMENT MARCIN*/
-/*hello people */
-/*Asia test */
