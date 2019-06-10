@@ -17,7 +17,7 @@ namespace RiskManagementTSD.Controllers
             _riskDbContext = context;
         }
 
-        public ViewResult Index()
+       public ViewResult Index()
         {
             var risks = _riskDbContext.AddRisk.ToList();
             return View("Table", risks);
