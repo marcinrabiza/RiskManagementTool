@@ -1,0 +1,54 @@
+﻿@model RiskManagementTSD.Models.AddRisk
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add risk</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Risk Details</h4></div>
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="EditRisk" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="Name">Risk Name: </label>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Risk Details: </label>
+                    <input class="form-control" asp-for="Description"/>
+                </div>
+
+                <div class="form-group">
+                    <label>What is the risk probability?</label>
+                    <select class="form-control" asp-for="Probability">
+                        <option value="">Choose an option</option>
+                        <option value="L">Low</option>
+                        <option value="M">Medium</option>
+                        <option value="H">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>What is the expected impact?</label>
+                    <select class="form-control" asp-for="Impact">
+                        <option value="">Choose an option</option>
+                        <option value="L">Low</option>
+                        <option value="M">Medium</option>
+                        <option value="H">High</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" asp-action="EditRisk" asp-route-riskId ="@Model.Id">Edit Risk</button>
+                    <!--<form><button type="submit" asp-action="AddRisk">Add new risk</button></form>-->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
