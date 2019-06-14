@@ -9,16 +9,14 @@ namespace RiskManagementTSD.Models
     public class AddRisk
     {
         private int _score;
-        private int _probability;
-        private int _impact;
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int? Probability { get; set; }
         public int? Impact { get; set; }
-
         public int Score { get; set; }
-        
+
 
     }
 }

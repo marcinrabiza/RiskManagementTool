@@ -22,6 +22,7 @@ namespace RiskManagementTSD.Controllers
             var risks = _riskDbContext.AddRisk.ToList();
             return View("Table", risks);
         }
+
         [HttpGet]
         public ViewResult AddRisk()
         {
@@ -35,8 +36,14 @@ namespace RiskManagementTSD.Controllers
             //Saving to db.
             _riskDbContext.AddRisk.Add(addRisk);
             _riskDbContext.SaveChanges();
-            return View("Success", addRisk);
-            
+            return View("Success", addRisk); 
+        }
+        [HttpPost]
+        public ViewResult DeleteRisk(AddRisk addRisk)
+        {
+            _riskDbContext.AddRisk.Remove(addRisk);
+            _riskDbContext.SaveChanges();
+            return View("SuccessDelete", addRisk);
         }
     }
 }
