@@ -1,8 +1,8 @@
 ﻿.roinput {
-    border: 0;
-    background-color: transparent;
+    border: 0 !important;
+    background-color: transparent !important;
 }
 th {
-    background-color: darkslategrey;
-    color:honeydew;
+    background-color: darkslategrey !important;
+    color:honeydew !important;
 }
