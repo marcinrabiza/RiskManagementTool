@@ -39,9 +39,10 @@ namespace RiskManagementTSD.Controllers
             return View("Success", addRisk); 
         }
         [HttpPost]
-        public ViewResult DeleteRisk(AddRisk addRisk)
+        public ActionResult DeleteRisk(AddRisk addRisk)
         {
-            _riskDbContext.AddRisk.Remove(addRisk);
+            var st = _riskDbContext.AddRisk.Find(addRisk);
+            _riskDbContext.AddRisk.Remove(st);
             _riskDbContext.SaveChanges();
             return View("SuccessDelete", addRisk);
         }

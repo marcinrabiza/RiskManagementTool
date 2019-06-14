@@ -16,7 +16,5 @@ namespace RiskManagementTSD.Models
         public int? Probability { get; set; }
         public int? Impact { get; set; }
         public int Score { get; set; }
-
-
     }
 }

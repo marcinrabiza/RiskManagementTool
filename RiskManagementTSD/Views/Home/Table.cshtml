@@ -34,7 +34,12 @@
                         <td><input name="impact" class="border-0 bg-transparent" value="@item.Impact" readonly></td>
                         <td><input name="score" class="border-0 bg-transparent" value="@item.Score" readonly></td>
                         <td><button type="submit" asp-action="EditRisk">Edit</button></td>
-                        <td><button type="submit" asp-action="DeleteRisk">Delete</button></td>
+                        <td>
+                            <button type="submit" asp-action="DeleteRisk">Delete</button>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete record with ID = @item.Id');"/>
+                        </td>
+
                     </tr>
                 </form>
             }

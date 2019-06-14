@@ -34,7 +34,7 @@ namespace RiskManagementTSD
             });
 
             services.AddDbContext<RiskDbContext>(options =>
-              options.UseInMemoryDatabase("AddRisk"));
+             options.UseInMemoryDatabase("AddRisk"));
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
