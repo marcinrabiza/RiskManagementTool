@@ -1,8 +1,10 @@
-﻿@model List<AddRisk>;
+﻿<!DOCTYPE html>
+
+@model List<AddRisk>;
 @{
     Layout = null;
 }
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -10,38 +12,35 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    
+    <h1> Risk Management Record</h1>
     <table class="table table-sm table-striped table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Probability</th>
-            <th>Impact</th>
-            <th>Score</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Probability</th>
+                <th scope="col">Impact</th>
+                <th scope="col">Score</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
 
-        @foreach(AddRisk item in @Model)
+            @foreach(AddRisk item in @Model)
             {
-                <form>
-                    <tr>
-                        <td><input name="id" class="border-0 bg-transparent" value="@item.Id" readonly></td>
-                        <td><input name="name" class="border-0 bg-transparent" value="@item.Name" readonly></td>
-                        <td><input name="desciption" class="border-0 bg-transparent" value="@item.Description" readonly></td>
-                        <td><input name="probability" class="border-0 bg-transparent" value="@item.Probability" readonly></td>
-                        <td><input name="impact" class="border-0 bg-transparent" value="@item.Impact" readonly></td>
-                        <td><input name="score" class="border-0 bg-transparent" value="@item.Score" readonly></td>
-                        <td><button type="submit" asp-action="EditRisk">Edit</button></td>
-                        <td>
-                            <button type="submit" asp-action="DeleteRisk">Delete</button>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete record with ID = @item.Id');"/>
-                        </td>
-
-                    </tr>
-                </form>
+            <form>
+                <tr>
+                    <td><input name="id" class="border-0 bg-transparent" value="@item.Id" readonly></td>
+                    <td><input name="name" class="border-0 bg-transparent" value="@item.Name" readonly></td>
+                    <td><input name="desciption" class="border-0 bg-transparent" value="@item.Description" readonly></td>
+                    <td><input name="probability" class="border-0 bg-transparent" value="@item.Probability" readonly></td>
+                    <td><input name="impact" class="border-0 bg-transparent" value="@item.Impact" readonly></td>
+                    <td><input name="score" class="border-0 bg-transparent" value="@item.Score" readonly></td>
+                    <td><button type="submit" asp-action="EditRisk">Edit</button></td>
+                    <td><button type="submit" asp-action="DeleteRisk">Delete</button></td>
+                </tr>
+            </form>
             }
 
     </table>
