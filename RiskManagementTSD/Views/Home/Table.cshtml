@@ -13,6 +13,7 @@
     
     <table class="table table-sm table-striped table-bordered">
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Description</th>
             <th>Probability</th>
@@ -26,6 +27,7 @@
             {
                 <form>
                     <tr>
+                        <td><input name="id" class="border-0 bg-transparent" value="@item.Id" readonly></td>
                         <td><input name="name" class="border-0 bg-transparent" value="@item.Name" readonly></td>
                         <td><input name="desciption" class="border-0 bg-transparent" value="@item.Description" readonly></td>
                         <td><input name="probability" class="border-0 bg-transparent" value="@item.Probability" readonly></td>
