@@ -1,6 +1,7 @@
 ﻿.roinput {
     border: 0 !important;
     background-color: transparent !important;
+    box-shadow: none;
 }
 th {
     background-color: darkslategrey !important;
