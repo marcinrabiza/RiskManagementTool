@@ -35,7 +35,7 @@ namespace RiskManagementTSD.Controllers
             //Saving to db.
             _riskDbContext.AddRisk.Add(addRisk);
             _riskDbContext.SaveChanges();
-            return View("Thanks", addRisk);
+            return View("Success", addRisk);
             
         }
     }
