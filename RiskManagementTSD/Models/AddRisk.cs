@@ -15,7 +15,8 @@ namespace RiskManagementTSD.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int? Probability {
+        public string? Probability
+        {
 
             get
             {
@@ -23,7 +24,10 @@ namespace RiskManagementTSD.Models
             }
             set
             {
-                _probability = value;
+                if (Probability.HasValue)
+                    _probability = Probability.Value;
+                else
+                    _probability = 0;
             }
         }
         public int? Impact
@@ -35,7 +39,10 @@ namespace RiskManagementTSD.Models
             }
             set
             {
-                _impact = value;
+                if (Impact.HasValue)
+                    _impact = Impact.Value;
+                else
+                    _impact = 0; 
             }
         }
 
@@ -48,7 +55,7 @@ namespace RiskManagementTSD.Models
             }
             set
             {
-               if (_probability == null || _impact == null)
+               if (_probability == 0 || _impact == 0)
                     _score = 0; 
                else
                     _score = _probability * _impact;
