@@ -63,7 +63,8 @@ namespace RiskManagementTSD.Controllers
                     "see your system administrator.");
                 }
             }
-            return View("Table");
+            var allRisks = _riskDbContext.AddRisk.ToList();
+            return View("Table", allRisks);
 
         }
 
