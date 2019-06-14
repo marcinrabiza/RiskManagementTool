@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="w-75 p-3">
-        <div class="panel-heading text-center bg-info">
+        <div class="panel-heading text-center bg-success">
             <h2>Risks Management Register</h2>
         </div>
         <table class="table table-sm table-striped table-bordered">
@@ -35,12 +35,12 @@
             {
                 <form>
                     <tr>
-                        <td><input style="background-color:transparent;" name="id" value="@item.Id" readonly></td>
-                        <td><input style="background-color:transparent;" name="name" value="@item.Name" readonly></td>
-                        <td><input style="background-color:transparent;" name="desciption" value="@item.Description" readonly></td>
-                        <td><input style="background-color:transparent;" name="probability" value="@item.Probability" readonly></td>
-                        <td><input style="background-color:transparent;" name="impact" value="@item.Impact" readonly></td>
-                        <td><input style="background-color:transparent;" name="score" value="@item.Score" readonly></td>
+                        <td><input class="roinput" name="id" value="@item.Id" readonly></td>
+                        <td><input class="roinput" name="name" value="@item.Name" readonly></td>
+                        <td><input class="roinput" name="desciption" value="@item.Description" readonly></td>
+                        <td><input class="roinput" name="probability" value="@item.Probability" readonly></td>
+                        <td><input class="roinput" name="impact" value="@item.Impact" readonly></td>
+                        <td><input class="roinput" name="score" value="@item.Score" readonly></td>
                         <td><button type="submit" asp-action="Details">Edit</button></td>
                         <td>
                             <button type="submit" asp-action="DeleteRisk" value="Delete" onclick="return confirm('Are you sure you want to delete risk @item.Name?')">Delete</button>
