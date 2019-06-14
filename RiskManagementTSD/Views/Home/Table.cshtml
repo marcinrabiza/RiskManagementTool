@@ -19,7 +19,7 @@
         </div>
         <table class="table table-sm table-striped table-bordered">
             <thead class="thead-dark">
-                <tr>
+                <tr style="background-color: darkslategrey; color:honeydew;">
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
@@ -35,12 +35,12 @@
             {
                 <form>
                     <tr>
-                        <td><input class="roinput" name="id" value="@item.Id" readonly></td>
-                        <td><input class="roinput" name="name" value="@item.Name" readonly></td>
-                        <td><input class="roinput" name="desciption" value="@item.Description" readonly></td>
-                        <td><input class="roinput" name="probability" value="@item.Probability" readonly></td>
-                        <td><input class="roinput" name="impact" value="@item.Impact" readonly></td>
-                        <td><input class="roinput" name="score" value="@item.Score" readonly></td>
+                        <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="id" value="@item.Id" readonly></td>
+                        <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="name" value="@item.Name" readonly></td>
+                        <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="desciption" value="@item.Description" readonly></td>
+                        <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="probability" value="@item.Probability" readonly></td>
+                        <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="impact" value="@item.Impact" readonly></td>
+                        <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="score" value="@item.Score" readonly></td>
                         <td><button type="submit" asp-action="Details">Edit</button></td>
                         <td>
                             <button type="submit" asp-action="DeleteRisk" asp-route-riskId ="@item.Id" onclick="return confirm('Are you sure you want to delete risk @item.Name?')">Delete</button>
