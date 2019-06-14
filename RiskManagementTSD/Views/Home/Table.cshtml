@@ -12,42 +12,44 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    <h1> Risk Management Register</h1>
-    <table class="table table-sm table-striped table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Probability</th>
-                <th scope="col">Impact</th>
-                <th scope="col">Score</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-            </tr>
-        </thead>
-
-            @foreach(AddRisk item in @Model)
-            {
-            <form>
+    <div class="panel-heading text-center">
+    <h4>Risks Management Records</h4>
+    </div>
+        <table class="table table-sm table-striped table-bordered">
+            <thead class="thead-dark">
                 <tr>
-                    <td><input name="id" value="@item.Id" readonly></td>
-                    <td><input name="name" value="@item.Name" readonly></td>
-                    <td><input name="desciption" value="@item.Description" readonly></td>
-                    <td><input name="probability" value="@item.Probability" readonly></td>
-                    <td><input name="impact" value="@item.Impact" readonly></td>
-                    <td><input name="score" value="@item.Score" readonly></td>
-                    <td><button type="submit" asp-action="EditRisk">Edit</button></td>
-                    <td>
-                        <button type="submit" asp-action="DeleteRisk">Delete</button>
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                        <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete record with ID = @item.Id');" />
-                    </td>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Probability</th>
+                    <th scope="col">Impact</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
-            </form>
+            </thead>
+
+            @foreach (AddRisk item in @Model)
+            {
+                <form>
+                    <tr>
+                        <td><input name="id" value="@item.Id" readonly></td>
+                        <td><input name="name" value="@item.Name" readonly></td>
+                        <td><input name="desciption" value="@item.Description" readonly></td>
+                        <td><input name="probability" value="@item.Probability" readonly></td>
+                        <td><input name="impact" value="@item.Impact" readonly></td>
+                        <td><input name="score" value="@item.Score" readonly></td>
+                        <td><button type="submit" asp-action="EditRisk">Edit</button></td>
+                        <td>
+                            <button type="submit" asp-action="DeleteRisk">Delete</button>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete record with ID = @item.Id');" />
+                        </td>
+                    </tr>
+                </form>
             }
 
-    </table>
-    <form><button type="submit" asp-action="AddRisk">New</button></form>
+        </table>
+        <form><button type="submit" asp-action="AddRisk">New</button></form>
 </body>
 </html>
