@@ -9,59 +9,16 @@ namespace RiskManagementTSD.Models
     public class AddRisk
     {
         private int _score;
-        private int _impact;
         private int _probability;
-
+        private int _impact;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string? Probability
-        {
+        public int? Probability { get; set; }
+        public int? Impact { get; set; }
 
-            get
-            {
-                return _probability;
-            }
-            set
-            {
-                if (Probability.HasValue)
-                    _probability = Probability.Value;
-                else
-                    _probability = 0;
-            }
-        }
-        public int? Impact
-        {
-
-            get
-            {
-                return _impact;
-            }
-            set
-            {
-                if (Impact.HasValue)
-                    _impact = Impact.Value;
-                else
-                    _impact = 0; 
-            }
-        }
-
-
-        public int Score
-        {
-            get
-            {
-                return _score;
-            }
-            set
-            {
-               if (_probability == 0 || _impact == 0)
-                    _score = 0; 
-               else
-                    _score = _probability * _impact;
-            }
-        }
-       
+        public int Score { get; set; }
+        
 
     }
 }
