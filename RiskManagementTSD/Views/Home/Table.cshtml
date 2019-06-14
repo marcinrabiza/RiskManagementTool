@@ -39,8 +39,8 @@
                         <td><input name="probability" value="@item.Probability" readonly></td>
                         <td><input name="impact" value="@item.Impact" readonly></td>
                         <td><input name="score" value="@item.Score" readonly></td>
-                        <td><button type="submit" asp-action="EditRisk">Edit</button></td>
-                        <td><button type="submit" asp-action="DeleteRisk" value="Delete" onclick="return confirm('Are you sure you want to delete record with ID = @item.Id')">Delete</button>
+                        <td><button type="submit" asp-action="Details">Edit</button></td>
+                        <td><button type="submit" asp-action="DeleteRisk" value="Delete" onclick="return confirm('Are you sure you want to delete risk @item.Name?')">Delete</button>
                         </td>
                     </tr>
                 </form>
