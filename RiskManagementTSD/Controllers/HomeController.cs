@@ -41,9 +41,6 @@ namespace RiskManagementTSD.Controllers
         [HttpPost]
         public ViewResult DeleteRisk(AddRisk addRisk)
         {
-            // TODO: store response from guest
-            /*Repository.AddResponse(guestResponse);*/
-            //Saving to db.
             _riskDbContext.AddRisk.Remove(addRisk);
             _riskDbContext.SaveChanges();
             return View("SuccessDelete", addRisk);
