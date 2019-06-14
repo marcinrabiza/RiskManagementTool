@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RiskManagementTSD.Models;
 using RiskManagementTSD.Models.Context;
 
@@ -37,6 +35,35 @@ namespace RiskManagementTSD.Controllers
             _riskDbContext.SaveChanges();
             return View("Success", addRisk);
             
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditRisk(int riskId)
+        {
+            var riskToUpdate = _riskDbContext.AddRisk.Find(riskId);
+
+            if (await TryUpdateModelAsync<AddRisk>(riskToUpdate, "", r => r.Name, r => r.Description, r => r.Probability, r => r.Impact))
+            {
+                try
+                {
+                    await _riskDbContext.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateException) {
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists, " +
+                    "see your system administrator.");
+                }
+            }
+            return View("Table");
+
+        }
+
+        [HttpGet]
+        public ViewResult Details(AddRisk risk)
+        {
+            var currentRisk = _riskDbContext.AddRisk.Find(risk.Id);
+            return View("Details", currentRisk);
         }
     }
 }
