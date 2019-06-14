@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="w-75 p-3">
-        <div class="panel-heading text-center bg-success">
+        <div class="panel-heading text-left bg-success">
             <h2>Risks Management Register</h2>
         </div>
         <table class="table table-sm table-striped table-bordered">
@@ -43,7 +43,7 @@
                         <td><input class="roinput" name="score" value="@item.Score" readonly></td>
                         <td><button type="submit" asp-action="Details">Edit</button></td>
                         <td>
-                            <button type="submit" asp-action="DeleteRisk" value="Delete" onclick="return confirm('Are you sure you want to delete risk @item.Name?')">Delete</button>
+                            <button type="submit" asp-action="DeleteRisk" asp-route-riskId ="@item.Id" onclick="return confirm('Are you sure you want to delete risk @item.Name?')">Delete</button>
                         </td>
                     </tr>
                 </form>
