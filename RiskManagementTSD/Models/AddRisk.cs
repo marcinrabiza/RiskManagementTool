@@ -8,6 +8,7 @@ namespace RiskManagementTSD.Models
     
     public class AddRisk
     {
+
         private int _score;
 
         public int Id { get; set; }
