@@ -7,7 +7,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
     
@@ -26,11 +26,11 @@
             {
                 <form>
                     <tr>
-                        <td><input name="name" value="@item.Name" readonly></td>
-                        <td><input name="name" value="@item.Description" readonly></td>
-                        <td><input name="name" value="@item.Probability" readonly></td>
-                        <td><input name="name" value="@item.Impact" readonly></td>
-                        <td><input name="name" value="@item.Score" readonly></td>
+                        <td><input name="name" class="border-0 bg-transparent" value="@item.Name" readonly></td>
+                        <td><input name="desciption" class="border-0 bg-transparent" value="@item.Description" readonly></td>
+                        <td><input name="probability" class="border-0 bg-transparent" value="@item.Probability" readonly></td>
+                        <td><input name="impact" class="border-0 bg-transparent" value="@item.Impact" readonly></td>
+                        <td><input name="score" class="border-0 bg-transparent" value="@item.Score" readonly></td>
                         <td><button type="submit" asp-action="EditRisk">Edit</button></td>
                         <td><button type="submit" asp-action="DeleteRisk">Delete</button></td>
                     </tr>
