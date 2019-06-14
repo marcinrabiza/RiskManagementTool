@@ -52,8 +52,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 table input {
-    background-color: transparent;
-    border: 0px solid;
+    background-color: transparent !important;
+    border: 0px solid !important;
 }
 body {
   margin: 0;
