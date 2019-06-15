@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,11 +12,12 @@ namespace RiskManagementTSD.Controllers
     {
         private readonly RiskDbContext _riskDbContext;
 
-        public HomeController(RiskDbContext context) {
+        public HomeController(RiskDbContext context)
+        {
             _riskDbContext = context;
         }
 
-       public ViewResult Index()
+        public ViewResult Index()
         {
             var risks = _riskDbContext.AddRisk.ToList();
             return View("Table", risks);
@@ -34,7 +36,7 @@ namespace RiskManagementTSD.Controllers
             //Saving to db.
             _riskDbContext.AddRisk.Add(addRisk);
             _riskDbContext.SaveChanges();
-            return View("Success", addRisk); 
+            return View("Success", addRisk);
         }
         [HttpPost]
         public ViewResult DeleteRisk(AddRisk addRisk)
@@ -45,27 +47,23 @@ namespace RiskManagementTSD.Controllers
             return View("SuccessDelete", addRisk);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> EditRisk(int riskId)
+        public ActionResult EditRisk(int? id)
         {
-            var riskToUpdate = _riskDbContext.AddRisk.Find(riskId);
+            var risk = _riskDbContext.AddRisk.SingleOrDefault(r => r.Id == id);
+            return View(risk);
+        }
 
-            if (await TryUpdateModelAsync<AddRisk>(riskToUpdate, "", r => r.Name, r => r.Description, r => r.Probability, r => r.Impact))
+
+        [HttpPost]
+        public ActionResult EditRisk(AddRisk risk)
+        {
+            if (ModelState.IsValid)
             {
-                try
-                {
-                    await _riskDbContext.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (DbUpdateException) {
-                    ModelState.AddModelError("", "Unable to save changes. " +
-                    "Try again, and if the problem persists, " +
-                    "see your system administrator.");
-                }
+                _riskDbContext.Entry(risk).State = EntityState.Modified;
+                _riskDbContext.SaveChanges();
+                return RedirectToAction("Index");
             }
-            var allRisks = _riskDbContext.AddRisk.ToList();
-            return View("Table", allRisks);
-
+            return View(risk);
         }
 
         [HttpGet]

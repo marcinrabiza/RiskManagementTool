@@ -41,9 +41,9 @@
                         <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="probability" value="@item.Probability" readonly></td>
                         <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="impact" value="@item.Impact" readonly></td>
                         <td><input class="roinput" style="border: 0;background-color: transparent;box-shadow: none;" name="score" value="@item.Score" readonly></td>
-                        <td><button type="submit" asp-action="Details">Edit</button></td>
+                        <td>@Html.ActionLink("Edit", "EditRisk", new { id = @item.Id }) </td>
                         <td>
-                            <button type="submit" asp-action="DeleteRisk" asp-route-riskId ="@item.Id" onclick="return confirm('Are you sure you want to delete risk @item.Name?')">Delete</button>
+                            <button type="submit" asp-action="DeleteRisk" asp-route-riskId="@item.Id" onclick="return confirm('Are you sure you want to delete risk @item.Name?')">Delete</button>
                         </td>
                     </tr>
                 </form>
