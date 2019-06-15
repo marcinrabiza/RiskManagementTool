@@ -33,8 +33,7 @@ namespace RiskManagementTSD
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.AddDbContext<RiskDbContext>(options =>
-             //options.UseInMemoryDatabase("AddRisk"));
+            //services.AddDbContext<RiskDbContext>(options => options.UseInMemoryDatabase("AddRisk"));
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

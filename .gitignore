@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 RiskManagementTSD/Migrations/RiskDbContextModelSnapshot.cs
+RiskManagementTSD/Migrations/20190607114559_RiskMigration.Designer.cs
+RiskManagementTSD/Migrations/20190607114559_RiskMigration.cs

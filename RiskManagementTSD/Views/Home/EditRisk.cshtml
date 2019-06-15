@@ -1,57 +1,54 @@
 ﻿@model RiskManagementTSD.Models.AddRisk
+
 @{
-    Layout = null;
+    ViewData["Title"] = "EditRisk";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Add risk</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-</head>
-<body>
-    <div class="panel panel-success">
-        <div class="panel-heading text-center bg-success"><h2>Editing risk</h2></div>
-        <div class="panel-body">
-            <form class="p-a-1" asp-action="AddRisk" method="post">
-                <div asp-validation-summary="All"></div>
-                <input type="hidden" class="form-control" asp-for="Name" />
-                <div class="form-group">
-                    <label asp-for="Name">Name the risk: </label>
-                    <input class="form-control" asp-for="Name" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Description">Give more details: </label>
-                    <input class="form-control" asp-for="Description" />
-                </div>
 
-                <div class="form-group">
-                    <label>What is the risk probability?</label>
-                    <select class="form-control" asp-for="Probability">
-                        <option value="">Choose an option</option>
-                        <option value="L">Low</option>
-                        <option value="M">Medium</option>
-                        <option value="H">High</option>
-                    </select>
-                </div>
+<h2>View</h2>
 
-                <div class="form-group">
-                    <label>What is the expected impact?</label>
-                    <select class="form-control" asp-for="Impact">
-                        <option value="">Choose an option</option>
-                        <option value="L">Low</option>
-                        <option value="M">Medium</option>
-                        <option value="H">High</option>
-                    </select>
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-primary" type="submit" asp-action="Table">
-                        Submit risk
-                    </button>
-                    <!--<form><button type="submit" asp-action="AddRisk">Add new risk</button></form>-->
-                </div>
-            </form>
-        </div>
+<h4>AddRisk</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditRisk">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Probability" class="control-label"></label>
+                <input asp-for="Probability" class="form-control" />
+                <span asp-validation-for="Probability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Impact" class="control-label"></label>
+                <input asp-for="Impact" class="form-control" />
+                <span asp-validation-for="Impact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Score" class="control-label"></label>
+                <input asp-for="Score" class="form-control" />
+                <span asp-validation-for="Score" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
     </div>
-</body>
-</html>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
