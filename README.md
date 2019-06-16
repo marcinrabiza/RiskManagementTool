@@ -1,0 +1,1 @@
+Risk Management web application made with C#, ASP.Net Core, MVC architecture and Entity Framework. Running website was avaiable at: http://riskregistertsd.azurewebsites.net/ for a few days (server might went offline due to Azure license expiration).
