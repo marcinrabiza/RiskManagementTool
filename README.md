@@ -1,1 +1,3 @@
-Risk Management web application made with C#, ASP.Net Core, MVC architecture and Entity Framework. Application was deployed using Azure DevOps at: http://riskregistertsd.azurewebsites.net/ (server might went offline due to Azure license expiration). All the development was done at the "production" branch.
+# Risk Management Tool
+
+Risk Management web application made with C#, ASP.Net Core, MVC architecture and Entity Framework. 
